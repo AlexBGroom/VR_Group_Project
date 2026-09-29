@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class WeaponBase : MonoBehaviour
+[CreateAssetMenu(fileName = "WeaponBase", menuName = "Scriptable Objects/WeaponBase")]
+public class WeaponBase : ScriptableObject
 {
-    [SerializeField] float damage;
+    [SerializeField] public float damage;
+    [SerializeField] public float knockBackForce;
 }
