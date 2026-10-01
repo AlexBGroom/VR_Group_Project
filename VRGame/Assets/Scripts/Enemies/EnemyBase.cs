@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour, IDamageable
 {
+    [SerializeField] float health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +17,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
-
+        health -= damage;
+        Debug.Log(health);
     }
 }

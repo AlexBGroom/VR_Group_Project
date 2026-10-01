@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5319a460e3565f4a8b482d7a88a2fda, type: 3}
   m_Name: TestMeleeWeapon
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 10
   knockBackForce: 0
-  attackRate: 0
-  swingMinimum: 0
+  attackRate: 1
+  swingMinimum: 0.1
