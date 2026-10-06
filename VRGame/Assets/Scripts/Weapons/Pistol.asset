@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92bab38a54f723f44a31112730bd3f0e, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 10
   knockBackForce: 20
   fierRate: 0
   magSize: 0

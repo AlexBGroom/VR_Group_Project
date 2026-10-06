@@ -19,5 +19,15 @@ public class EnemyBase : MonoBehaviour, IDamageable
     {
         health -= damage;
         Debug.Log(health);
+
+        if(health <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 }
