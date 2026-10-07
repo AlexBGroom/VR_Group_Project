@@ -1,7 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.XR;
 
 public class PlayerHeadCollider : MonoBehaviour
 {
+    // checks to see if the players head has hit anything by using a raycast against the mask of an obj
     private List<RaycastHit> PreformDetection
         (Vector3 Position, float distance, LayerMask mask)
     {
@@ -20,6 +23,7 @@ public class PlayerHeadCollider : MonoBehaviour
         }
     }
 
+    //Checks to see if the player had hit any colliders, if the player gets pushed back calls CaculatePushBackDirection()
     private void update()
     {
         if (_detector.DetectedColliderHits.count <= 0)
@@ -29,7 +33,7 @@ public class PlayerHeadCollider : MonoBehaviour
 
         _characterController.Move(pushBackDir.normalized * pushBackStrength * Time.deltaTime);
     }
-
+    // Pushes the player's head back on collision with a wall
     private Vector3 CaculatePushBackDirection()
     {
         Vector3 combinedNormal = Vector3.Zero;
