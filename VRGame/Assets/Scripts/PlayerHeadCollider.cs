@@ -1,9 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine.XR;
 
 public class PlayerHeadCollider : MonoBehaviour
 {
+    [SerializeField] private CharacterController _characterController;
+    [SerializeField] float pushBackStrength;
+    [SerializeField] private Detector _detector;
+
     // checks to see if the players head has hit anything by using a raycast against the mask of an obj
     private List<RaycastHit> PreformDetection
         (Vector3 Position, float distance, LayerMask mask)
