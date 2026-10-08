@@ -26,7 +26,7 @@ public class PlayerWatchManager : MonoBehaviour
             Debug.Log(hit.collider);
             if (hit.collider.TryGetComponent<IScannable>(out IScannable scannable))
             {
-                scannable.Scan();
+                //scannable.Scan();
                 Debug.Log("Scanner found");
             }
             else

@@ -5,7 +5,7 @@ public class WatchScannerController : MonoBehaviour, IScannable
 {
     [SerializeField] UnityEvent scanEvent;
 
-    public void Scan()
+    public void Scan(SecurityCardSO requiredCard)
     {
         scanEvent.Invoke();
     }
