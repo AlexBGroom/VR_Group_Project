@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc9aff067ab342419ed272cdddb50a9, type: 3}
+  m_Name: SecurityOfficeCard
+  m_EditorClassIdentifier: 
+  cardName: Security office card
+  setMaterial: {fileID: 2100000, guid: e3499a637d3bd7641a33f19131bb0e79, type: 2}

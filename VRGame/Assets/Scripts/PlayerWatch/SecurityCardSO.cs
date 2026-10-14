@@ -4,4 +4,5 @@ using UnityEngine;
 public class SecurityCardSO : ScriptableObject
 {
     [SerializeField] string cardName;
+    [SerializeField] public Material setMaterial;
 }

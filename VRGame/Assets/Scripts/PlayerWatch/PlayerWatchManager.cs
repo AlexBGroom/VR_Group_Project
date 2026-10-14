@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerWatchManager : MonoBehaviour
 {
     [SerializeField] GameObject scannerPoint;
+    [SerializeField] GameObject cardInstert;
     [SerializeField] float rayRange;
+    [SerializeField]List<SecurityCardSO> storedCards = new List<SecurityCardSO>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +29,7 @@ public class PlayerWatchManager : MonoBehaviour
             Debug.Log(hit.collider);
             if (hit.collider.TryGetComponent<IScannable>(out IScannable scannable))
             {
-                //scannable.Scan();
+                scannable.Scan(storedCards);
                 Debug.Log("Scanner found");
             }
             else
@@ -41,8 +44,16 @@ public class PlayerWatchManager : MonoBehaviour
         
     }
 
-    private void ObjectScan()
+    private void AddCard(SecurityCardSO card)
     {
-        
+        storedCards.Add(card);
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        if (collision.GetComponent<Collider>().TryGetComponent<SecurityCardPickup>(out SecurityCardPickup card))
+        {
+            AddCard(card.securityCard);
+        }
     }
 }
