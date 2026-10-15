@@ -50,7 +50,7 @@ public class GunController : MonoBehaviour
 
             if (hit.collider.TryGetComponent<IDamageable>(out IDamageable damageable))
             {
-                damageable.TakeDamage(gunStats.damage);
+                damageable.TakeDamage(gunStats.damage, gunStats.weaponType);
             }
         }
     }

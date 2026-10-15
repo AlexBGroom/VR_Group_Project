@@ -15,7 +15,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
         
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, WeaponBase.WeaponTypes damageSource)
     {
         health -= damage;
         Debug.Log(health);

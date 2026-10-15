@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   knockBackForce: 0
+  weaponType: 1
   attackRate: 1
   swingMinimum: 0.1

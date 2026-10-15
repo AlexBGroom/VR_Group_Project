@@ -42,7 +42,7 @@ public class MeleeWeaponController : MonoBehaviour
             else
             {
                 recentlyHitObjects.Add(damageObj);
-                damageObj.TakeDamage(_weaponStats.damage);
+                damageObj.TakeDamage(_weaponStats.damage, _weaponStats.weaponType);
                 StartCoroutine(targetReset(damageObj));
             }
         }
