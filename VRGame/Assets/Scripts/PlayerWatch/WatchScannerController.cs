@@ -12,12 +12,13 @@ public class WatchScannerController : MonoBehaviour, IScannable
     {
         if (cardList.Contains(requiredCard))
         {
+            Debug.Log("Watch does have correct card");
             scanEvent.Invoke();
         } 
-        // else()
-        // {
-            
-        // }
+        else
+        {
+           Debug.Log("Watch does not have the correct card"); 
+        }
     }
 
     // IEnumerator ScanFail()

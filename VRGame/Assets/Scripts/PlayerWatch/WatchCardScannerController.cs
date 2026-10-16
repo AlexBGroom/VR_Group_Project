@@ -7,6 +7,7 @@ public class WatchCardScannerController : MonoBehaviour
     {
         if (collision.GetComponent<Collider>().TryGetComponent<SecurityCardPickup>(out SecurityCardPickup card))
         {
+            Debug.Log("Scanned card");
             watchManager.AddCard(card.securityCard);
         }
     }

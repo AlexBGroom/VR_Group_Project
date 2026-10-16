@@ -8,7 +8,6 @@ public class DestructableProps : MonoBehaviour, IDamageable
     public void TakeDamage(float damage, WeaponBase.WeaponTypes damageSource)
     {
         health -= damage;
-        Debug.Log(health);
 
          if(health <= 0)
          {

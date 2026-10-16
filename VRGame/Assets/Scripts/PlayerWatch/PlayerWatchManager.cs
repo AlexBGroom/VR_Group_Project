@@ -29,12 +29,12 @@ public class PlayerWatchManager : MonoBehaviour
             Debug.Log(hit.collider);
             if (hit.collider.TryGetComponent<IScannable>(out IScannable scannable))
             {
+                Debug.Log("ScannableFound");
                 scannable.Scan(storedCards);
-                Debug.Log("Scanner found");
             }
             else
             {
-                Debug.Log("Scanner not found");
+            
             }
         }
     }
