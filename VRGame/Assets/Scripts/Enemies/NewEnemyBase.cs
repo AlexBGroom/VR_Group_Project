@@ -23,7 +23,7 @@ public class NewEnemyBase : MonoBehaviour, IDamageable
     }
 
     //this method will handle the incoming damage from a weapon
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage, WeaponBase.WeaponTypes damageType)
     {
         //Apply any armor or damage resistance if any
         float finalDamage = damage * damageTakenMultiplier;
