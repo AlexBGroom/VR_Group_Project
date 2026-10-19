@@ -29,12 +29,12 @@ public class PlayerWatchManager : MonoBehaviour
             Debug.Log(hit.collider);
             if (hit.collider.TryGetComponent<IScannable>(out IScannable scannable))
             {
+                Debug.Log("ScannableFound");
                 scannable.Scan(storedCards);
-                Debug.Log("Scanner found");
             }
             else
             {
-                Debug.Log("Scanner not found");
+            
             }
         }
     }
@@ -44,16 +44,10 @@ public class PlayerWatchManager : MonoBehaviour
         
     }
 
-    private void AddCard(SecurityCardSO card)
+    public void AddCard(SecurityCardSO card)
     {
         storedCards.Add(card);
     }
 
-    void OnTriggerEnter(Collider collision)
-    {
-        if (collision.GetComponent<Collider>().TryGetComponent<SecurityCardPickup>(out SecurityCardPickup card))
-        {
-            AddCard(card.securityCard);
-        }
-    }
+    
 }

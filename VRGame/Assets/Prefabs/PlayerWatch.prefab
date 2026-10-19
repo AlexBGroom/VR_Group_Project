@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863102760794907617}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.043}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 6031665604708692044}
   - component: {fileID: 3945670289670213766}
   - component: {fileID: 5000423798745469443}
+  - component: {fileID: 4027106674572352573}
   m_Layer: 6
   m_Name: CardInsert
   m_TagString: Untagged
@@ -403,12 +404,25 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4027106674572352573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3883036318914389135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96226d09aa8ef9d4aaf577c5c2b14e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watchManager: {fileID: 8283104493233619450}
 --- !u!1 &4249840530648951786
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +977,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.26035237, y: 0.098713875, z: 0.1387577}
   m_Center: {x: 0.13868558, y: -0.0007095337, z: -0.013762474}
@@ -980,7 +994,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scannerPoint: {fileID: 6531555192131316424}
-  rayRange: 10
+  cardInstert: {fileID: 3883036318914389135}
+  rayRange: 100
   storedCards: []
 --- !u!1 &6531555192131316424
 GameObject:
@@ -1006,10 +1021,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6531555192131316424}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0258, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.046, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2196737983483624107}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
