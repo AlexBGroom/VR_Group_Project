@@ -995,7 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scannerPoint: {fileID: 6531555192131316424}
   cardInstert: {fileID: 3883036318914389135}
-  rayRange: 100
+  rayRange: 3
   storedCards: []
 --- !u!1 &6531555192131316424
 GameObject:

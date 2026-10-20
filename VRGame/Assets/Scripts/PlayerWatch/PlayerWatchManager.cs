@@ -26,10 +26,8 @@ public class PlayerWatchManager : MonoBehaviour
         
         if(Physics.Raycast(scannerPoint.transform.position, scannerPoint.transform.forward, out hit, rayRange))
         {
-            Debug.Log(hit.collider);
             if (hit.collider.TryGetComponent<IScannable>(out IScannable scannable))
             {
-                Debug.Log("ScannableFound");
                 scannable.Scan(storedCards);
             }
             else

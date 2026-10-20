@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DestroyableEntity : MonoBehaviour
+public class DestroyableEntity : MonoBehaviour, IDamageable
 {
     [SerializeField] UnityEvent onDestroy;
     [SerializeField] float health;
@@ -11,11 +11,11 @@ public class DestroyableEntity : MonoBehaviour
 
     public void TakeDamage(float damage, WeaponBase.WeaponTypes damageSource)
     {
-        if (specificDamageType && damageSource == requieredWeaponType)
+        if (specificDamageType == true && damageSource == requieredWeaponType)
         {
             health -= damage;
         }
-        else if (specificDamageType && damageSource != requieredWeaponType)
+        else if (specificDamageType == true && damageSource != requieredWeaponType)
         {
             return;
         }
@@ -27,6 +27,7 @@ public class DestroyableEntity : MonoBehaviour
         if (health <= 0)
         {
             onDestroy.Invoke();
+            Destroy(gameObject);
         }
         
     }

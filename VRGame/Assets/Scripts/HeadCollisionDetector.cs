@@ -8,6 +8,9 @@ public class HeadCollisionDetector : MonoBehaviour
     [SerializeField] private float _detectionDistance = 0.2f;
     [SerializeField] private LayerMask _detectionLayers;
 
+    [SerializeField] private CharacterController charController;
+    [SerializeField] private float pushBackStrength;
+
     public List<RaycastHit> DetectedColliderHits {get; private set;}
 
     [SerializeField] private float _currentTime = 0f;
@@ -22,9 +25,11 @@ public class HeadCollisionDetector : MonoBehaviour
         foreach(var dir in directions)
         {
             RaycastHit hit;
-            if(Physics.Raycast(position, dir, out hit))
+            if(Physics.Raycast(position, dir, out hit, distance))
             {
                 detectedHits.Add(hit);
+
+                Debug.Log(hit.collider);
             }
         }
         return detectedHits;
@@ -45,6 +50,27 @@ public class HeadCollisionDetector : MonoBehaviour
             _currentTime = 0;
             DetectedColliderHits = PreformDetection(transform.position, _detectionDistance, _detectionLayers);
         }
+
+        if(DetectedColliderHits.Count <= 0)
+        {
+            return;
+        }
+
+        Vector3 pushbackDir = CalculatePushBackDirection();
+
+        charController.Move(pushbackDir.normalized * pushBackStrength * Time.deltaTime);
+    }
+
+    private Vector3 CalculatePushBackDirection()
+    {
+        Vector3 combinedNoraml = Vector3.zero;
+
+        foreach (var hitPoint in DetectedColliderHits)
+        {
+            combinedNoraml += new Vector3(hitPoint.normal.x, 0, hitPoint.normal.z);
+        }
+
+        return combinedNoraml;
     }
 
     private void OnDrawGizmos()

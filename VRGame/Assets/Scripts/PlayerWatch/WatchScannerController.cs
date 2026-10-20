@@ -10,14 +10,19 @@ public class WatchScannerController : MonoBehaviour, IScannable
 
     public void Scan(List<SecurityCardSO> cardList)
     {
+        if (requiredCard == null)
+        {
+            scanEvent.Invoke(); 
+            return;
+        }
+
         if (cardList.Contains(requiredCard))
         {
-            Debug.Log("Watch does have correct card");
             scanEvent.Invoke();
         } 
         else
         {
-           Debug.Log("Watch does not have the correct card"); 
+           
         }
     }
 

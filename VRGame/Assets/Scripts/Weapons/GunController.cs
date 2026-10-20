@@ -38,7 +38,6 @@ public class GunController : MonoBehaviour
 
         if (Physics.Raycast(firePoint.transform.position, targetForward, out hit))
         {
-            Debug.Log(hit.collider);
 
             TrailRenderer bulletTrail = Instantiate(trail, firePoint.transform.position, Quaternion.identity);
             StartCoroutine(SpawnTrail(bulletTrail, hit));
