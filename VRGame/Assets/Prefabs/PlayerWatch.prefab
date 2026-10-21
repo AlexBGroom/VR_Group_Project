@@ -936,6 +936,7 @@ GameObject:
   - component: {fileID: 2196737983483624107}
   - component: {fileID: 3364495447625374030}
   - component: {fileID: 8283104493233619450}
+  - component: {fileID: 7350694965568522628}
   m_Layer: 6
   m_Name: PlayerWatch
   m_TagString: Untagged
@@ -997,6 +998,25 @@ MonoBehaviour:
   cardInstert: {fileID: 3883036318914389135}
   rayRange: 3
   storedCards: []
+  storedScreens: []
+  selectedWatchScreen: {fileID: 0}
+  activeWatchScreen: {fileID: 0}
+  screenPosition: {fileID: 0}
+--- !u!114 &7350694965568522628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6388388507951564114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e622003baa1f47c45acf334756c37d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerWatchManager: {fileID: 8283104493233619450}
+  requieredRotationChange: 90
+  motionTimeFrame: 1
 --- !u!1 &6531555192131316424
 GameObject:
   m_ObjectHideFlags: 0
