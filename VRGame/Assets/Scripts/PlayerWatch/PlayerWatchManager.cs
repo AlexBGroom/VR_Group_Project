@@ -5,13 +5,36 @@ public class PlayerWatchManager : MonoBehaviour
 {
     [SerializeField] GameObject scannerPoint;
     [SerializeField] GameObject cardInstert;
+    [SerializeField] GameObject watchScreen;
     [SerializeField] float rayRange;
     [SerializeField]List<SecurityCardSO> storedCards = new List<SecurityCardSO>();
+    [SerializeField]List<PlayerWatchScreensSO> storedScreens = new List<PlayerWatchScreensSO>();
+    [SerializeField] PlayerWatchScreensSO selectedWatchScreen;
+    [SerializeField] GameObject activeWatchScreen;
+    [SerializeField] GameObject screenPosition;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
+    }
+
+    void ActivateWatchScreen()
+    {
+        activeWatchScreen = Instantiate(selectedWatchScreen.watchScreen, screenPosition.transform.position, screenPosition.transform.rotation);
+
+    }
+
+    void DeactivateWatchScreen()
+    {
+        Destroy(activeWatchScreen);
+    }
+
+    void ChangeWatchScreen()
+    {
+        DeactivateWatchScreen();
+
+        
     }
 
     // Update is called once per frame
@@ -45,6 +68,16 @@ public class PlayerWatchManager : MonoBehaviour
     public void AddCard(SecurityCardSO card)
     {
         storedCards.Add(card);
+    }
+
+    private void ChangeScreen()
+    {
+        
+    }
+
+    public void AddScreen(PlayerWatchScreensSO screen)
+    {
+        
     }
 
     

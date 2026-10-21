@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 2255363651474571179}
   - component: {fileID: 2002571818168738241}
   m_Layer: 6
-  m_Name: watchBackground
+  m_Name: 'watchBackground '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
