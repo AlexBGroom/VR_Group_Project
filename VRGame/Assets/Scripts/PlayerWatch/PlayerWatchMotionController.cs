@@ -37,8 +37,11 @@ public class PlayerWatchMotionController : MonoBehaviour
 
         if (rotationChange >= requieredRotationChange)
         {
-            playerWatchManager.ChangeWatchScreen();
+            Debug.Log("Screen change triggered");
+            //playerWatchManager.ChangeWatchScreen();
         }
+
+        previousRotation = currentRotation;
     }
 
 }
