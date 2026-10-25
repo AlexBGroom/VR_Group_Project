@@ -21,6 +21,7 @@ public class PlayerHandsController : MonoBehaviour
     {
         if(m_GripInput.ReadValue() >= 1)
         {
+            Debug.Log("GripPressed");
             anim.SetTrigger("Grip");
         }
         else

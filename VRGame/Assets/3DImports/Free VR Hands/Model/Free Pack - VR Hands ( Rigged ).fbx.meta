@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 03c0bada29c106d4ab7965f081735304
+AssetOrigin:
+  serializedVersion: 1
+  productId: 402280
+  packageName: Free Pack - VR Hands
+  packageVersion: 1.0
+  assetPath: Assets/PolyOne/Free VR Hands/Model/Free Pack - VR Hands ( Rigged ).fbx
+  uploadId: 980304
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,8 +23,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -91,7 +96,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: J_Left
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
@@ -99,7 +104,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
@@ -107,10 +112,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 402280
-  packageName: Free Pack - VR Hands
-  packageVersion: 1.0
-  assetPath: Assets/PolyOne/Free VR Hands/Model/Free Pack - VR Hands ( Rigged ).fbx
-  uploadId: 980304
