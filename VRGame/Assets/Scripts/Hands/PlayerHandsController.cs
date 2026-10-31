@@ -8,6 +8,8 @@ public class PlayerHandsController : MonoBehaviour
     [Header("Animations")]
     [SerializeField]  Animator anim;
 
+    bool gripActive;
+
     [Header("XR Inputs")]
     [SerializeField]  XRInputValueReader<float> m_GripInput = new XRInputValueReader<float>("Grip");
 
@@ -19,14 +21,17 @@ public class PlayerHandsController : MonoBehaviour
 
     void Update()
     {
-        if(m_GripInput.ReadValue() >= 1)
+        if(m_GripInput.ReadValue() >= 1 && gripActive != true)
         {
             Debug.Log("GripPressed");
             anim.SetTrigger("Grip");
+            gripActive = true;
         }
-        else
+        else if(m_GripInput.ReadValue() < 0.8 && gripActive == true)
         {
             anim.SetTrigger("EndGrip");
+            Debug.Log("EndGrip");
+            gripActive = false;
         }
     }
 
