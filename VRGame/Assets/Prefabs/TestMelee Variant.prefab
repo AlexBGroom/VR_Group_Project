@@ -28,6 +28,18 @@ PrefabInstance:
       propertyPath: _weaponModel
       value: 
       objectReference: {fileID: 7235299747906953537}
+    - target: {fileID: 4089392564595595886, guid: 90ccfc7163cf0094d9b3716895e9c796, type: 3}
+      propertyPath: m_Mass
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089392564595595886, guid: 90ccfc7163cf0094d9b3716895e9c796, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089392564595595886, guid: 90ccfc7163cf0094d9b3716895e9c796, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6628728959888734850, guid: 90ccfc7163cf0094d9b3716895e9c796, type: 3}
       propertyPath: m_Name
       value: TestMelee Variant
