@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 99f448d0fb68c77458b7cf7ffed73010
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 220555
+  packageName: 80s Soviet Computer
+  packageVersion: 1.0
+  assetPath: Assets/80s Soviet Computer/Textures/Screen Render Texture.renderTexture
+  uploadId: 501671
