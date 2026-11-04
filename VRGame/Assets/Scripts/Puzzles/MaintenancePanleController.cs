@@ -3,19 +3,34 @@ using UnityEngine;
 
 public class MaintenancePanleController : MonoBehaviour
 {
-    [SerializeField] List<MaintenancePanleButtonsController> storedButtons = new List<MaintenancePanleButtonsController>();
-
+    [SerializeField] public List<MaintenancePanleButtonsController> storedButtons = new List<MaintenancePanleButtonsController>();
+    [SerializeField] GameObject buttonsParent;
     [SerializeField] int minButtonsChanged;
     [SerializeField] int maxButtonsChanged;
+    [SerializeField] public int activeButtons;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        AssignButtons();
+        InitalizePuzzle();
+    }
+
+    void AssignButtons()
+    {
+        int childCount = buttonsParent.transform.childCount;
+        Debug.Log(childCount);
+
+        for (int i = 0; i < childCount; i++)
+        {
+            MaintenancePanleButtonsController button = buttonsParent.transform.GetChild(i).GetComponent<MaintenancePanleButtonsController>(); 
+            storedButtons.Add(button);
+        }  
     }
 
     void InitalizePuzzle()
     {
+        Debug.Log("Puzzle Initalized");
         int buttonsTotal = Random.Range(minButtonsChanged, maxButtonsChanged);
 
         for (int i = 0; i < buttonsTotal;) 
