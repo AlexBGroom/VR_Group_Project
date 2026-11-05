@@ -12,6 +12,7 @@ public class MaintenancePanleButtonsController : MonoBehaviour
         GetComponent<Renderer>().material.color = Color.green;
         on = true;
         maintenancePanleController.activeButtons++;
+        maintenancePanleController.CheckPuzzleCompletion();
     }
 
     public void TurnOff()
@@ -23,7 +24,7 @@ public class MaintenancePanleButtonsController : MonoBehaviour
 
     public void ToggleButton()
     {
-        if(on == true)
+        if(on != true)
         {
             TurnOn();
         }

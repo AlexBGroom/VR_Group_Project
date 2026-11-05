@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MaintenancePanleController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MaintenancePanleController : MonoBehaviour
     [SerializeField] int minButtonsChanged;
     [SerializeField] int maxButtonsChanged;
     [SerializeField] public int activeButtons;
+    public UnityEvent onCompletion;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,6 +44,14 @@ public class MaintenancePanleController : MonoBehaviour
                 storedButtons[num].TurnOn();
                 i++;
             }
+        }
+    }
+
+    public void CheckPuzzleCompletion()
+    {
+        if(activeButtons == storedButtons.Count)
+        {
+            onCompletion.Invoke();
         }
     }
 
