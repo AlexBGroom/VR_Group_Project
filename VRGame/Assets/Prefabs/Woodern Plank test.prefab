@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6408244365131259412}
   - component: {fileID: 1372627676079552451}
   - component: {fileID: 8941362101116720221}
-  - component: {fileID: 5955154156089485791}
+  - component: {fileID: 2457466287230392716}
   m_Layer: 0
   m_Name: Woodern Plank test
   m_TagString: Untagged
@@ -109,7 +109,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5955154156089485791
+--- !u!114 &2457466287230392716
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7663994785030760187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ae6351ce53c3d4da464e6a3ccb1c97, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d0268f5c3216264c9104fa56173a22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+  health: 10
+  takeDamageEffect: {fileID: 1625280002315487003, guid: 81c53966280c2d949a1784c39240f596, type: 3}
+  specificDamageType: 0
+  requieredWeaponType: 1

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NewEnemyBase : MonoBehaviour, IDamageable
 {
-
+    [SerializeField] ParticleSystem takeDamageEffect;
 
     [Header("Core Stats")]
     [SerializeField] protected float maxHealth = 100f;
@@ -28,6 +28,8 @@ public class NewEnemyBase : MonoBehaviour, IDamageable
         //Apply any armor or damage resistance if any
         float finalDamage = damage * damageTakenMultiplier;
         currentHealth -= finalDamage;
+
+        takeDamageEffect.Play();
 
         Debug.Log($"{gameObject.name} took {finalDamage} damage. Remaining Health:{currentHealth}");
 

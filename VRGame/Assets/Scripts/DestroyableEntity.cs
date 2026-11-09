@@ -5,6 +5,22 @@ public class DestroyableEntity : MonoBehaviour, IDamageable
 {
     [SerializeField] UnityEvent onDestroy;
     [SerializeField] float health;
+    public float Health
+    {
+        get => health;
+        set
+        {
+            health -= value;
+
+            if(health <= 0)
+            {
+                onDestroy.Invoke();
+                takeDamageEffect.Play();
+                Destroy(gameObject);
+            }
+        }
+    }
+    [SerializeField] ParticleSystem takeDamageEffect;
 
     [SerializeField] bool specificDamageType;
     [SerializeField] WeaponBase.WeaponTypes requieredWeaponType;
@@ -13,7 +29,7 @@ public class DestroyableEntity : MonoBehaviour, IDamageable
     {
         if (specificDamageType == true && damageSource == requieredWeaponType)
         {
-            health -= damage;
+            Health -= damage;
         }
         else if (specificDamageType == true && damageSource != requieredWeaponType)
         {
@@ -21,14 +37,13 @@ public class DestroyableEntity : MonoBehaviour, IDamageable
         }
         else
         {
-            health -= damage;
+            Health -= damage;
         }
 
-        if (health <= 0)
-        {
-            onDestroy.Invoke();
-            Destroy(gameObject);
-        }
+        // if (health <= 0)
+        // {
+           
+        // }
         
     }
 }
