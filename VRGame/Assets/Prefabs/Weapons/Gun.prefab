@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 5017400811801451219}
   muzzleFlash: {fileID: 5291421253874770211}
+  impactEffect: {fileID: 5842597266409436671, guid: c07344ca1030a3a4db0f612eac77ad6c, type: 3}
   trail: {fileID: 6544478847374740112, guid: 87cc476fb04266e429d761be4729be1a, type: 3}
   gunStats: {fileID: 11400000, guid: 2f0b37df8abfced4aadb0a0ad0860f23, type: 2}
 --- !u!114 &3874549683182141151

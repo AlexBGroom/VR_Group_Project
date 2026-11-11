@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class WatchScannerController : MonoBehaviour, IScannable
 {
     [SerializeField] UnityEvent scanEvent;
+    [SerializeField] ParticleSystem positiveScanEffect;
+    [SerializeField] ParticleSystem negativeScanEffect;
 
     [SerializeField] SecurityCardSO requiredCard;
 
@@ -13,21 +15,18 @@ public class WatchScannerController : MonoBehaviour, IScannable
         if (requiredCard == null)
         {
             scanEvent.Invoke(); 
+            positiveScanEffect.Play();
             return;
         }
 
         if (cardList.Contains(requiredCard))
         {
             scanEvent.Invoke();
+            positiveScanEffect.Play();
         } 
         else
         {
-           
+            negativeScanEffect.Play();
         }
     }
-
-    // IEnumerator ScanFail()
-    // {
-    //     //change an indicator to flash red
-    // }
 }

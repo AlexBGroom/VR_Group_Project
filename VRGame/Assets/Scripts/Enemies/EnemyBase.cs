@@ -2,31 +2,45 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour, IDamageable
 {
-    [SerializeField] float health;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] ParticleSystem takeDamageEffect;
+
+    [Header("Core Stats")]
+    [SerializeField] protected float maxHealth = 100f;
+    protected float currentHealth;
+
+    [Header("Movement & combat stats")]
+    [SerializeField] protected float moveSpeed = 2.0f;
+    [SerializeField] protected float attackDamage = 10f;
+    [SerializeField] protected float attackCooldown = 1.5f;
+
+    [Header("Armour & resistance")]
+    [Range(0f, 1f)]
+    [SerializeField] protected float damageTakenMultiplier = 1.0f; // 1.0 will be the normal, and 0.5 will be 50% in armour reduction 
+
+    protected virtual void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    //this method will handle the incoming damage from a weapon
+    public virtual void TakeDamage(float damage, WeaponBase.WeaponTypes damageType)
     {
-        
-    }
+        //Apply any armor or damage resistance if any
+        float finalDamage = damage * damageTakenMultiplier;
+        currentHealth -= finalDamage;
 
-    public void TakeDamage(float damage, WeaponBase.WeaponTypes damageSource)
-    {
-        health -= damage;
+        takeDamageEffect.Play();
 
-        if(health <= 0)
+        Debug.Log($"{gameObject.name} took {finalDamage} damage. Remaining Health:{currentHealth}");
+
+        if (currentHealth <= 0)
         {
             Death();
         }
     }
-
-    private void Death()
+    
+    protected virtual void Death()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); 
     }
 }

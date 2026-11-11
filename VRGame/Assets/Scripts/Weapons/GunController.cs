@@ -9,6 +9,7 @@ public class GunController : MonoBehaviour
 {
     [SerializeField] GameObject firePoint;
     [SerializeField] ParticleSystem muzzleFlash;
+    [SerializeField] GameObject impactEffect;
     [SerializeField] TrailRenderer trail;
 
     [SerializeField] GunBase gunStats;
@@ -50,6 +51,11 @@ public class GunController : MonoBehaviour
             if (hit.collider.TryGetComponent<IDamageable>(out IDamageable damageable))
             {
                 damageable.TakeDamage(gunStats.damage, gunStats.weaponType);
+            }
+            else
+            {
+                GameObject eff = Instantiate(impactEffect, hit.point, Quaternion.identity);
+                Destroy (eff, 1f);
             }
         }
     }
