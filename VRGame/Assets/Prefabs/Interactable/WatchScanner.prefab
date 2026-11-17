@@ -224,6 +224,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  positiveScanEffect: {fileID: 1932033981404935495, guid: f83999e4c0ebf5d4ba0c93b44c69c5d0, type: 3}
+  negativeScanEffect: {fileID: 7824294433654585380, guid: 2b481589435632644af02e07dbf555f2, type: 3}
   requiredCard: {fileID: 0}
 --- !u!65 &7171723629047228671
 BoxCollider:
