@@ -17,7 +17,10 @@ public class DestroyableEntity : MonoBehaviour, IDamageable
         if (specificDamageType == true && damageSource == requieredWeaponType)
         {
             health -= damage;
-            takeDamageEffect.Play();
+            if (takeDamageEffect == null)
+            {
+               takeDamageEffect.Play(); 
+            }
         }
         else if (specificDamageType == true && damageSource != requieredWeaponType)
         {
@@ -26,14 +29,21 @@ public class DestroyableEntity : MonoBehaviour, IDamageable
         else
         {
             health -= damage;
-            takeDamageEffect.Play();
+            if (takeDamageEffect == null)
+            {
+               takeDamageEffect.Play(); 
+            }
         }
 
         if (health <= 0)
         {
             onDestroy.Invoke();
-            GameObject eff = Instantiate(destroyEffect, transform.position, Quaternion.identity);
-            Destroy (eff, 1f);
+            if (destroyEffect == null)
+            {
+                GameObject eff = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                Destroy (eff, 1f);
+            }
+            
             Destroy(gameObject);
         }
         

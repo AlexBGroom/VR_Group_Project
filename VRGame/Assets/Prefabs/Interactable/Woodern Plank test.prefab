@@ -126,5 +126,6 @@ MonoBehaviour:
       m_Calls: []
   health: 10
   takeDamageEffect: {fileID: 1625280002315487003, guid: 81c53966280c2d949a1784c39240f596, type: 3}
+  destroyEffect: {fileID: 2202930130320776188, guid: 81c53966280c2d949a1784c39240f596, type: 3}
   specificDamageType: 0
   requieredWeaponType: 1
